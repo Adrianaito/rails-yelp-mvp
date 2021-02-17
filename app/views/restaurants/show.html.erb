@@ -12,8 +12,8 @@
       <p><strong>Contact: </strong><%= @restaurant.phone_number %></p>
       <% @reviews.each do |review| %>
       <p><%= review.content %></p>
+      <%= link_to "ⓧ", review_path(review), method: :delete, data: {confirm: "delete?"} %>
       <% end %>
-
       <%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: 'btn btn-info' %>
       <%= link_to 'Back', restaurants_path %>
     </div>

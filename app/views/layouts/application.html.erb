@@ -15,7 +15,9 @@
   <div class='card'>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <a class="navbar-brand" href="#">
-        <img src="https://cutt.ly/Zk9HGD2" />
+        <%#= link_to image_tag("https://cutt.ly/Zk9HGD2"), restaurants_path, class: 'img' %>
+        <%= image_tag "https://cutt.ly/Zk9HGD2", alt: "alttext" %>
+        <!-- <img src="https://cutt.ly/Zk9HGD2" /> -->
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
