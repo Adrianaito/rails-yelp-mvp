@@ -1,11 +1,16 @@
 
-<div>
-  <h1>Add a new Restaurant</h1>
-  <%= simple_form_for @restaurant do |f| %>
-  <%= f.input :content %>
-  <%= f.input :rating %>
-  <% if @restaurant.id %>
-  <%= f.submit 'Add', class: 'btn btn-info' %>
-  <% end %>
-  <% end %>
+<div class='card-product'>
+  <div class="d-flex justify-content-center p-3 mb-2">
+    <h1>Add a new Review</h1>
+  </div>
+  <div class="d-flex w-100 justify-content-center">
+    <div class="card-product-infos w-50">
+      <%= simple_form_for [@restaurant, @review] do |f| %>
+      <%= f.input :content, as: :text %>
+      <%= f.input :rating, input_html: {min: 0} %>
+      <%= f.submit 'Add', class: 'btn btn-info' %>
+      <% end %>
+      <%= link_to 'Back', restaurants_path %>
+    </div>
+  </div>
 </div>

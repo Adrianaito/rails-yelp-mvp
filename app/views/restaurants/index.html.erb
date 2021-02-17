@@ -1,14 +1,21 @@
-<h1>Restaurants</h1>
+
 <div class="card-product">
-  <img src="" />
-  <div class="card-product-infos">
-    <% @restaurants.each do |restaurant| %>
-    <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
-    <p>Category: <%= restaurant.category %></p>
-    <p><strong><%= restaurant.address %></strong></p>
-    <p><%= restaurant.phone_number %></p>
-    <% end %>
+  <div class="d-flex justify-content-center p-3 mb-2">
+    <h1 >Restaurants</h1>
   </div>
+  <div class="d-flex w-100 justify-content-center">
+    <div class="card-product-infos w-75">
+      <% @restaurants.each do |restaurant| %>
+      <div class="d-flex justify-content-around border border-light shadow-sm p-3 mb-2 bg-white rounded">
+        <h2 class='d-flex align-items-center'><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+        <div>
+          <p>Category: <%= restaurant.category %></p>
+          <p><strong><%= restaurant.address %></strong></p>
+          <p><%= restaurant.phone_number %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
 </div>
-
-

@@ -1,3 +1,21 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
-<%= link_to 'Add a review', new_restaurant_review_path(@restaurant) %>
+
+<!-- <p>Find me in app/views/restaurants/show.html.erb</p> -->
+
+<div class="card-product">
+  <div class="d-flex justify-content-center p-3 mb-2">
+    <h1><%= "#{@restaurant.name}" %></h1>
+  </div>
+  <div class="d-flex w-100 justify-content-center">
+    <div class="card-product-infos w-75">
+      <p><strong>Category: </strong><%= @restaurant.category %></p>
+      <p><strong>Address: </strong><%= @restaurant.address %></p>
+      <p><strong>Contact: </strong><%= @restaurant.phone_number %></p>
+      <% @reviews.each do |review| %>
+      <p><%= review.content %></p>
+      <% end %>
+
+      <%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: 'btn btn-info' %>
+      <%= link_to 'Back', restaurants_path %>
+    </div>
+  </div>
+</div>
