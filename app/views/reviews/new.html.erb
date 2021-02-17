@@ -1,0 +1,11 @@
+
+<div>
+  <h1>Add a new Restaurant</h1>
+  <%= simple_form_for @restaurant do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <% if @restaurant.id %>
+  <%= f.submit 'Add', class: 'btn btn-info' %>
+  <% end %>
+  <% end %>
+</div>
